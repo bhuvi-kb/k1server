@@ -2,24 +2,15 @@ const mongoose = require('mongoose');
 const plm = require('passport-local-mongoose');
 
 const regUserSchema = new mongoose.Schema({
+    email: String,
     username: String,
     hash: String,
     salt: String
 });
 
-const postSchema = new mongoose.Schema({
-    author: {
-        type: String,
-        required: true
-    },
-    content: {
-        type: String,
-        required: true
-    }
-})
 
 
-regUserSchema.plugin(plm);
+regUserSchema.plugin(plm, {usernameQueryFields:['email']});
 
 const regUser = mongoose.model('regUser', regUserSchema,'regUsers');
 
