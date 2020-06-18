@@ -17,8 +17,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 
-const mongoUrl = 'mongodb://localhost:27017/keechdb';
+//const mongoUrl = 'mongodb://localhost:27017/keechdb';
 //const mongoUrl='mongodb://root:root@mongo:27017/keechdb';
+const mongoUrl='mongodb://root:root@172.21.201.17:27017/keechdb';
 const connection = mongoose.connect(mongoUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 
 console.log("Trying to connect")
